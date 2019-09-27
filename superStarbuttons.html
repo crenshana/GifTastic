@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SuperStars</title>
+</head>
+
+<!--wrestling ring-->
+<body
+background="https://cdn.wallpapersafari.com/14/30/jNMzAZ.png">
+
+<!--Add bootstrap link-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<div class="jumbotron">
+  <div class="container text-center"></div>
+    <h1 class="display-10">WRESTLING SUPERSTAR GIFS!!</h1>
+    
+  </div>
+
+<!--Gif img src is added; _s.gif is added to the end of img src to still the data, _s is removed to animate the gif-->
+<!--I couldnt figure out how to 'data-still' the API without ruining the results -->
+
+<img src="https://media2.giphy.com/media/PxODFK7xhKiHe/200.gif?cid=25d2ccec6d46c530363be4f4fbe589794cf8e9d95ee53379&rid=200.gif" data-still="https://media2.giphy.com/media/PxODFK7xhKiHe/200.gif?cid=25d2ccec6d46c530363be4f4fbe589794cf8e9d95ee53379&rid=200_s.gif" data-animate="https://media2.giphy.com/media/PxODFK7xhKiHe/200.gif?cid=25d2ccec6d46c530363be4f4fbe589794cf8e9d95ee53379&rid=200.gif" data-state="still" class="gif">
+  
+<img src="https://media2.giphy.com/media/pNVNB5TuNjLyg/200.gif?cid=25d2ccecb505ed3b62c2ba682fb0d12e45f1b99055c37858&rid=200.gif" data-still="https://media2.giphy.com/media/pNVNB5TuNjLyg/200.gif?cid=25d2ccecb505ed3b62c2ba682fb0d12e45f1b99055c37858&rid=200_s.gif" data-animate="https://media2.giphy.com/media/pNVNB5TuNjLyg/200.gif?cid=25d2ccecb505ed3b62c2ba682fb0d12e45f1b99055c37858&rid=200.gif" data-state="still" class="gif">
+ 
+<img src="https://media3.giphy.com/media/2rAKI0STYah9yULFOE/200.gif?cid=25d2ccec6d46c530363be4f4fbe589794cf8e9d95ee53379&rid=200.gif" data-still="https://media3.giphy.com/media/2rAKI0STYah9yULFOE/200.gif?cid=25d2ccec6d46c530363be4f4fbe589794cf8e9d95ee53379&rid=200_s.gif" data-animate="https://media3.giphy.com/media/2rAKI0STYah9yULFOE/200.gif?cid=25d2ccec6d46c530363be4f4fbe589794cf8e9d95ee53379&rid=200.gif" data-state="still" class="gif">
+
+<img src="https://media0.giphy.com/media/sQKXIFcYiDCes/200.gif?cid=25d2ccece404ae057ec7205739543b1b13807d1878ff47b3&rid=200.gif" data-still="https://media0.giphy.com/media/sQKXIFcYiDCes/200.gif?cid=25d2ccece404ae057ec7205739543b1b13807d1878ff47b3&rid=200_s.gif" data-state= "https://media0.giphy.com/media/sQKXIFcYiDCes/200.gif?cid=25d2ccece404ae057ec7205739543b1b13807d1878ff47b3&rid=200.gif" data-state="still" class="gif">
+
+<img src="https://media0.giphy.com/media/xT39Ddvja2HX1EzFbG/200.gif?cid=25d2ccec746cc06ddb0cd5dc13a81185b1b0e7445f392338&rid=200.gif" data-still="https://media0.giphy.com/media/xT39Ddvja2HX1EzFbG/200.gif?cid=25d2ccec746cc06ddb0cd5dc13a81185b1b0e7445f392338&rid=200_s.gif" data-animate="https://media0.giphy.com/media/xT39Ddvja2HX1EzFbG/200.gif?cid=25d2ccec746cc06ddb0cd5dc13a81185b1b0e7445f392338&rid=200.gif" data-state="still" class="gif">
+
+  
+  <!--unsure if jQuery link was needs to on this page twice, but it works-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+  <script type="text/javascript">
+
+  //click function will allow user to click on gif and stop (it's more of a stutter than a pause) and them reanimate the gif (it continues to more once the click is released).
+    $(".gif").on("click", function() {
+      
+      const state = $(this).attr("data-state");
+      
+      if (state === "still") {
+        $(this).attr("src", $(this).attr("data-animate"));
+        $(this).attr("data-state", "animate");
+      } else {
+        $(this).attr("src", $(this).attr("data-still"));
+        $(this).attr("data-state", "still");
+      }
+    });
+  </script>
+
+  
+<!--neat row of vertical buttons-->
+<div class="btn-group-vertical">
+    <!--Name superstar buttons-->
+    <!--button id="addTopics" onclick="addTopic()">Add Word</button-->
+    <button data-person="Adam Cole">baybay</button>
+    <button data-person="The Rock">Smell what the Rock is cooking</button>
+    <button data-person="James Storm">Sorry about your damn luck</button>
+    <button data-person="Seth Rollins">Burn it down</button>
+    <button data-person="HHH">Are you ready Time to play the game</button>
+    <button data-person="Vince McMahon">You're fired</button>
+    <button data-person="Street Profits">We want the smoke</button>
+    <button data-person="New Day">Its a new day yes it it</button>
+    <button data-person="Bobby Rhoode">Glorious</button>
+
+  </div>
+      <!--submit button-->
+
+      
+      <div></div>
+      <input type="submit">
+      <!--Adds input textbox-->
+    <input type="text" id="userinput" value=" ">
+    <div id="message2">
+      
+
+    </div>
+    <div id="message">
+        
+    </div>
+    
+</div>
+  
+    <!--<button id="processTopics" onclick="function()">ProcessTopics</button>-->
+    
+<div></div>>
+
+    <div id="gifs-appear-here"></div>
+
+    <!--Add jQuery link-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        //Array of superstars
+        var arrTopics = ["Adam Cole", "The Rock", "James Storm","Seth Rollins", "HHH", "Vince McMahon", "Street Profits","New Day"]
+
+       // will allow user to add additional superstar gifs to the array the array, refresh is the only way I can find to clear the gifs
+        $("#add-topic").on("Click", function (){
+            event.preventDefault();
+            var topicsTyped =$("#text-input").val().trim();
+
+           // if(topicsTyped.length !=0) 
+                Topics.push(topic);
+
+                renderButtons();
+
+
+            
+
+        })
+        
+
+        
+        //["Adam Cole", "The Rock", "James Storm", "Seth Rollins", "HHH", "Vince McMahon", "Street Profits","New Day"];
+        //const count = topics.push("The Rock");
+        //console.log(count);
+        //console.log(topics);
+
+        //topics.push("Adam Cole", "The Rock", "James Storm","Seth Rollins", "HHH", "Vince McMahon", "Street Profits","New Day");
+        //console.log(topics);
+
+        //All buttons when clicked
+        $("button").on("click", function () {
+            //"this" is the clicked button
+            var person = $(this).attr("data-person");
+
+            var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + person + "&api_key=WjDb5terEzYgMgFKqQsWkNKwJKOwECC7&limit=10";
+
+            // AJAX GET 
+            
+            $.ajax({
+                url: queryURL,
+                method: "GET"
+            })
+                 // call back function        
+                .then(function (response) {
+                    var results = response.data;
+                    //loop result
+                    for (var i = 0; i < results.length; i++) {
+
+                        // add gif ratings here
+
+                        if (results[i].rating !== "G" && results[i].rating !== "PG" && results[i].rating !== "PG13" && results[i].rating !== "R") {
+
+                            // add gif div here
+                            var gifDiv = $("<div>");
+
+                            // add ratings results here
+
+                            var rating = results[i].rating;
+
+                            //show ratings of gifs
+                            var p = $("<p>").text("Rating: " + rating);
+
+                            //images
+                            var personImage = $("<img>");
+
+                            personImage.attr("src", results[i].images.fixed_height.url);
+
+                            //append gif div for paragraph and image
+                            gifDiv.append(p);
+                            gifDiv.append(personImage);
+
+                            //prepend gif div for #gifs-appear-here
+                            $("#gifs-appear-here").prepend(gifDiv);
+
+
+
+
+
+
+                        }
+
+                    }
+
+                });
+
+
+
+
+
+
+
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
